@@ -38,7 +38,7 @@ function Checkout() {
     const [state, dispatch] = useReducer(reducer, { CardNumber: '', ExpMonth: '', ExpYear: '', cvv: '' })
 
     
-    
+  
 
     useEffect(()=>{
   
@@ -46,10 +46,13 @@ function Checkout() {
         if(state.cvv.length === 3 && state.CardNumber.length <= 16 && state.ExpYear.length === 4 ){
             setDisable(false) 
         }else{setDisable(true)}
-    
+      
 
 
     },[state])
+
+    
+
 
     const recieptGen = (e)=>{
         e.preventDefault();
@@ -85,7 +88,7 @@ function Checkout() {
                     onChange={(e) => dispatch({ type: "CARDNUMBER", payload: e.target.value })} />
                 <br />
                 <label style={{fontSize: '1.2em'}} htmlFor="ExpMonth">Exp-Month:</label>
-                <input style={{borderRadius: '10px', padding:'8px', width:'200px'}} type="text" placeholder='month'
+                <input style={{borderRadius: '10px', padding:'8px', width:'200px'}} type="text" placeholder='Eg: sep'
                     onChange={(e) => dispatch({ type: "EXPMONTH", payload: e.target.value })} />
                 <br/>    
                 <label style={{fontSize: '1.2em'}} htmlFor="ExpYear">Exp-Year:</label>    

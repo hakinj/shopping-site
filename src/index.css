@@ -1,0 +1,23 @@
+.real{
+padding:150px;
+text-align: center;
+}
+.real h1{
+    border: 1px solid  rgb(128, 255, 177);
+    background: rgb(128, 255, 177);
+    border-radius: 15px;
+    width: 700px;
+    margin: auto;
+}
+.real button{
+    border: 1px solid rgb(114, 169, 231);
+    background: rgb(114, 169, 231);
+    font-size: 1.8rem;
+    border-radius: 20px;
+
+}
+
+.real button:hover{
+    background: rgb(163, 35, 223);
+    border-color: rgb(163, 35, 223);
+}
