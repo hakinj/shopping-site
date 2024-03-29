@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useMemo } from "react";
 import Navbar from '../components/narbar/Navbar'
 import { CartContext } from '../context/cartContext'
 import productStyle from '../style/productStyle'
+import { addAbortListener } from "events";
 
 
 
@@ -10,7 +11,8 @@ function Cartlist() {
     const { carts, setCarts } = useContext(CartContext)
     const { CartContainer, cart, cartImageStyle, cart2, cart3, wrapper, imgh1, tags } = productStyle()
     const [price, setPrice] = useState([])
-     
+    
+      
 
 
     const handleDelete = (id) => {
@@ -34,24 +36,23 @@ function Cartlist() {
             }else return item
          })})
       }
-
-      
-  
    
+
       const totalAll = price.reduce(function(acc, curr) {
         return acc + curr;
       }, 0);
-     
-     
+      console.log(price)
+
+      
+     console.log(price)
      useEffect(()=>{
-      carts.map((item) =>{
-        const price = item.total;
-        setPrice(prev =>[...prev, price])
-              
-          
-        
-       })
+     const allTotal = carts.map((item) =>{  return item.total});
+     setPrice(allTotal)
+       
+    
+      
      },[carts])
+ 
         
         
 

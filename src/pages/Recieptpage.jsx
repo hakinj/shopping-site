@@ -62,7 +62,7 @@ function Recieptpage() {
           <h2>Total</h2>
           <h2 style={{color:'green'}}>{totalAll}</h2>
         </div>
-        <div style={{fontSize:'0.4rem', textAlign:'center'}}><a href="http://localhost:5173/reciept"><h1>download receipt</h1></a></div>
+        <div style={{fontSize:'0.4rem', textAlign:'center'}}><a href="http://localhost:5173/reciept" download><h1>download receipt</h1></a></div>
         
       </div>
     </>
